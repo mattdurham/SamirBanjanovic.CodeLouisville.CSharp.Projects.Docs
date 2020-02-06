@@ -65,7 +65,7 @@ In this project we will create a simple application that prompts the user for in
 
 ## Example Code
 
-```
+```cs
 static void Main(string[] args)
 {
     Console.WriteLine("Enter Student Id");
@@ -100,14 +100,14 @@ static void Main(string[] args)
 
 ## Challenge
 
-Add a loop to allow the user to enter new student and display the output. Ask the user if they want to continue at the end of every loop. 
+Add a loop to allow the user to enter a new student and display the output. Ask the user if they want to continue at the end of every loop. 
 
 
 # Project 2
 
 ## Goal
 
-Store the list of students and allow them to be accessed. Along with validating the input and reprompting for invalid input. The search should tell the user if the name could not be found. Input validation should use `DateTimeOffset.TryParse` and `Int32.TryParse` commands. Prompt them to re-enter the value if it does not validate.
+Store a list of students and allow students to be accessed for add, display, and search methods (if `list` appears as an error, you may need to add the `System.Collections.Generic` using statement). Validate user input for non-string data types such as int and DateTimeOffset, when adding students. This validation should use `DateTimeOffset.TryParse` and `Int32.TryParse` commands. Repromt the user to reenter the value if the data is not successfully parsed. The search should tell the user if the name could not be found. 
 
 ## Work
 
@@ -149,18 +149,18 @@ For this you will need to install `Newtonsoft` which handles reading and writing
 
 The code should look similiar to
 
-```
+```cs
 _recordList = JsonConvert.DeserializeObject<List<Student>>(json);
 ```
 
-```
+```cs
 var json = JsonConvert.SerializeObject(_recordList);
 ```
 And use the `File.IO` functions to read and write the `List<Student>` object/json to and from file. 
 
 The json should look something similiar to 
 
-```
+```json
 [
     {
         "StudentId": 1,
